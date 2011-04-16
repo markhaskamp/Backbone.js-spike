@@ -12,6 +12,9 @@ var PageView = {
       opacity: '0.50',
       zIndex: 2700
     });
+
+    $('.team').droppable({ hoverClass: 'dragged_over' });
+
   }
 
 }

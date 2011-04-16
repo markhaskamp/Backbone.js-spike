@@ -16,6 +16,11 @@ body {
   background-color: #d5d5d5;
 }
 
+.dragged_over {
+  color: #d5d5d5;
+  background-color: #000099;
+}
+
 .ui-draggable-dragging {
   background-color: #a5a5a5;
 }
