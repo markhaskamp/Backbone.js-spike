@@ -10,3 +10,10 @@ describe("TeamList", function() {
   });
 });
 
+describe("stuff", function() {
+
+  it("on page_load, view.show_team_list is called", function() {
+    expect("test don't pass").toEqual("foo");
+  });
+});
+
