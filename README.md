@@ -1,7 +1,7 @@
 
-=== Learn a little about Backbone.js
+### Learn a little about Backbone.js
 
-==== while using...
+#### while using...
 
 * my EventAggregator
 * guard
