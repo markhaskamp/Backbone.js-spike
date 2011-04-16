@@ -4,7 +4,7 @@ body {
 
 #teams_container {
   width: 250px;
-  background-color: #D5D5D5;
+  background-color: silver;
   padding: 5px;
 }
 
@@ -12,4 +12,10 @@ body {
   border: 1px solid black;
   padding: 1px;
   padding-left: 3px;
+
+  background-color: #d5d5d5;
+}
+
+.ui-draggable-dragging {
+  background-color: #a5a5a5;
 }

@@ -7,6 +7,11 @@ var PageView = {
     });
 
     $('div#teams_container').html(html_str);
+    $('.team').draggable({
+      revert: 'invalid',
+      opacity: '0.50',
+      zIndex: 2700
+    });
   }
 
 }
