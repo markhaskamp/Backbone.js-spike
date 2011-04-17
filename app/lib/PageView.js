@@ -3,7 +3,7 @@ var PageView = Backbone.View.extend({
     className: "team_container",
 
     initialize: function() {
-      _.bindAll(this, 'render', 'close');
+      _.bindAll(this, 'render');
       this.model.bind('change', this.render);
       this.model.view = this;
     },
