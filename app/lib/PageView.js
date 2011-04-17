@@ -1,6 +1,4 @@
 var PageView = Backbone.View.extend({
-    tagName: "div",
-    className: "team_container",
 
     initialize: function() {
       _.bindAll(this, 'render');
