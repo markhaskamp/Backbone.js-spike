@@ -11,8 +11,8 @@ var TeamList = Backbone.Model.extend({
   get_index_for_team: function(team_html) {
     team_html = $.trim(team_html);
 
-    for(i=0; i<TeamList.team_list.length; i++) {
-      if ($.trim(TeamList.team_list[i]) === team_html) {
+    for(i=0; i<this.get('team_list').length; i++) {
+      if ($.trim(this.get('team_list')[i]) === team_html) {
         return(i);
       }
     }
@@ -24,18 +24,29 @@ var TeamList = Backbone.Model.extend({
     new_list = [];
 
     for (i=0; i<under_ndx; i++) {
-      new_list.push(TeamList.team_list[i]);
+      new_list.push(this.get('team_list')[i]);
     }
-    new_list.push(TeamList.team_list[over_ndx]);
+    new_list.push(this.get('team_list')[over_ndx]);
 
     for (i=under_ndx+1; i<=over_ndx; i++) {
-      new_list[i] = TeamList.team_list[i-1];
+      new_list[i] = this.get('team_list')[i-1];
     }
 
-    for (i=over_ndx+1; i<TeamList.team_list.length; i++) {
-      new_list.push(TeamList.team_list[i]);
+    for (i=over_ndx+1; i<this.get('team_list').length; i++) {
+      new_list.push(this.get('team_list')[i]);
     }
 
-    TeamList.team_list = new_list;
-  }
+    this.set({"team_list": new_list});
+    this.change();
+  },
+
+  handle_team_drop: function(draggable_team_html, droppable_teM) {
+    draggable_index = this.get_index_for_team(draggable_team_html);
+    droppable_index = this.get_index_for_team(droppable_team);
+
+    if (draggable_index !== null || droppable_index !== null) {
+      this.reorder_teams(draggable_index, droppable_index);
+    }
+
+  },
 });

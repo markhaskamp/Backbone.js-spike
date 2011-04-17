@@ -2,16 +2,12 @@ var PageView = Backbone.View.extend({
     tagName: "div",
     className: "team_container",
 
-    initialize: function(options) {
+    initialize: function() {
       _.bindAll(this, 'render', 'close');
       this.model.bind('change', this.render);
       this.model.view = this;
     },
 
-    events: {
-      "huh?" : "PAGE_LOAD"
-    },
-      
   render: function() {
     var html_str = "";
     _.each(this.model.get('team_list'), function(team) {
