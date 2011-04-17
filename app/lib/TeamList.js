@@ -48,5 +48,5 @@ var TeamList = Backbone.Model.extend({
       this.change();
     }
 
-  },
+  }
 });
