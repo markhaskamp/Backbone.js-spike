@@ -1,14 +1,17 @@
 var ea = new EventAggregator;
-var event_key = { PAGE_LOAD: "page_load" };
+var event_key = { PAGE_LOAD: 0, TEAM_DROP: 1,  RENDER_TEAMS: 2 };
 
 $(document).ready( function() {
   $('.team').live('mouseover', function() { $(this).css('cursor', 'move'); });
   $('.team').live('mouseout',  function() { $(this).css('cursor', 'default'); });
 
-
-  $('#teams_container').droppable();
-
   ea.subscribe(event_key.PAGE_LOAD, 'doc_ready', PageView.show_team_list);
+  ea.subscribe(event_key.TEAM_DROP, 'doc_ready', PageView.handle_team_drop);
+  ea.subscribe(event_key.RENDER_TEAMS, 'doc_ready', PageView.show_team_list);
+
+  $('#teams_container').droppable({
+    drop: function(m, d) { ea.publish(event_key.TEAM_DROP, d.draggable.html()); }
+  });
 
   ea.publish('page_load');
 });

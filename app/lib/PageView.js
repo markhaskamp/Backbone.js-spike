@@ -14,7 +14,11 @@ var PageView = {
     });
 
     $('.team').droppable({ hoverClass: 'dragged_over' });
+  },
 
+  handle_team_drop: function(team_html) {
+    // reorder teams
+
+    ea.publish(event_key.RENDER_TEAMS);
   }
-
 }
