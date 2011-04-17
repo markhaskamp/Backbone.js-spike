@@ -1,7 +1,7 @@
 var page_view;
 
 $(document).ready( function() {
-  page_view = new PageView();
+  page_view = new PageView({model: new TeamList()});
   $('.team').live('mouseover', function() { $(this).css('cursor', 'move'); });
   $('.team').live('mouseout',  function() { $(this).css('cursor', 'default'); });
 

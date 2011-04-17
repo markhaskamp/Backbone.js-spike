@@ -1,7 +1,8 @@
 var PageView = Backbone.View.extend({
-    initialize: function() {
-      this.model = new TeamList();
-      console.log('PageView. initialize(). enter');
+    tagName: "div",
+    className: "team_container",
+
+    initialize: function(options) {
       _.bindAll(this, 'render', 'close');
       this.model.bind('change', this.render);
       this.model.view = this;
