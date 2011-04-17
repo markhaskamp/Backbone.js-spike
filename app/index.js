@@ -1,5 +1,5 @@
 var ea = new EventAggregator;
-var event_key = { PAGE_LOAD: 0, TEAM_DROP: 1,  RENDER_TEAMS: 2 };
+var event_key = { PAGE_LOAD: "page_load", TEAM_DROP: "team_drop",  RENDER_TEAMS: "render_teams" };
 
 $(document).ready( function() {
   $('.team').live('mouseover', function() { $(this).css('cursor', 'move'); });
