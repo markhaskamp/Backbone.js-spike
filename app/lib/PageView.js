@@ -1,8 +1,19 @@
-var PageView = {
-  show_team_list: function() {
+var PageView = Backbone.View.extend({
+    initialize: function() {
+      this.model = new TeamList();
+      console.log('PageView. initialize(). enter');
+      _.bindAll(this, 'render', 'close');
+      this.model.bind('change', this.render);
+      this.model.view = this;
+    },
 
+    events: {
+      "huh?" : "PAGE_LOAD"
+    },
+      
+  render: function() {
     var html_str = "";
-    _.each(TeamList.team_list, function(team) {
+    _.each(this.model.get('team_list'), function(team) {
       html_str += '\n<div class="team">' + team + '</div>';
     });
 
@@ -32,4 +43,4 @@ var PageView = {
     return ($('.dragged_over').html());
   },
 
-}
+});

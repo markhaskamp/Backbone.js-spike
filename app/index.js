@@ -1,5 +1,7 @@
+var page_view;
 
 $(document).ready( function() {
+  page_view = new PageView();
   $('.team').live('mouseover', function() { $(this).css('cursor', 'move'); });
   $('.team').live('mouseout',  function() { $(this).css('cursor', 'default'); });
 
@@ -13,6 +15,6 @@ $(document).ready( function() {
     }
   });
 
-  // ea.publish('page_load');
+  page_view.render();
 });
 
