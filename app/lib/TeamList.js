@@ -6,23 +6,11 @@ var TeamList = {
               "Pittsburgh",
               "St. Louis"],
 
-  get_index_for_draggable_team: function(team_html) {
+  get_index_for_team: function(team_html) {
     team_html = $.trim(team_html);
 
     for(i=0; i<TeamList.team_list.length; i++) {
       if ($.trim(TeamList.team_list[i]) === team_html) {
-        return(i);
-      }
-    }
-
-    return null;
-  },
-
-  get_index_for_droppable_team: function() {
-    droppable_team_html = $('.dragged_over').html();
-
-    for (i=0; i<TeamList.team_list.length; i++) {
-      if (TeamList.team_list[i] === droppable_team_html) {
         return(i);
       }
     }
