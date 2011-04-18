@@ -13,6 +13,6 @@ $(document).ready( function() {
     }
   });
 
-  //ea.publish('page_load');
+  ko.applyBindings(PageView);
 });
 

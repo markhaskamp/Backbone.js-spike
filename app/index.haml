@@ -3,7 +3,9 @@
   %head
     %link{:rel => "stylesheet", :type => "text/css", :href => "main.css"}
     %script{:type => "text/javascript", :src => "lib/jquery-1.4.4.min.js"}
+    %script{:src => "http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"}
     %script{:type => "text/javascript", :src => "lib/jquery-ui-1.8.11.custom.min.js"}
+    %script{:type => "text/javascript", :src => "lib/knockout-1.1.2.js"}
     %script{:type => "text/javascript", :src => "lib/underscore-min.js"}
     %script{:type => "text/javascript", :src => "lib/EventAggregator.js"}
     %script{:type => "text/javascript", :src => "lib/TeamList.js"}
@@ -16,5 +18,8 @@
     %h4 drag and drop items in list to change their order
 
     %div#teams_container
+      %div.team{"data-bind" => "template: {name: \"team_template\", foreach: team_list}"}
 
+    %script{:type=> "text/html", :id => "team_template"}
+      %div.team{"data-bind" => "text: {value: team_name}"}
 

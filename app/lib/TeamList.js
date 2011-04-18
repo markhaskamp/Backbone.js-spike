@@ -1,10 +1,11 @@
+
 var TeamList = {
-  team_list: ["Chicago",
-              "Cincinnati",
-              "Houston",
-              "Milwaukee",
-              "Pittsburgh",
-              "St. Louis"],
+  team_list:  ["Chicago",
+               "Cincinnati",
+               "Houston",
+               "Milwaukee",
+               "Pittsburgh",
+               "St. Louis"],
 
   get_index_for_team: function(team_html) {
     team_html = $.trim(team_html);
