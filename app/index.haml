@@ -17,9 +17,11 @@
 
     %h4 drag and drop items in list to change their order
 
-    %div#teams_container
-      %div.team{"data-bind" => "template: {name: \"team_template\", foreach: team_list}"}
+    %div#teams_container{"data-bind" => "template: {name: \"team_tpl\", data: team_list}"}
 
-    %script{:type=> "text/html", :id => "team_template"}
-      %div.team{"data-bind" => "text: {value: team_name}"}
+    %script{:type=> "text/html", :id => "team_tpl"}
+      {{each $data}}
+      %div.team
+        ${ this.team_name }
+      {{/each }}
 
