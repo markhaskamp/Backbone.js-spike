@@ -1,18 +1,19 @@
+var droppable_team = null;
 
 $(document).ready( function() {
   $('.team').live('mouseover', function() { $(this).css('cursor', 'move'); });
   $('.team').live('mouseout',  function() { $(this).css('cursor', 'default'); });
 
-  // ea.subscribe(event_key.PAGE_LOAD, 'doc_ready', PageView.show_team_list);
-  // ea.subscribe(event_key.TEAM_DROP, 'doc_ready', PageView.handle_team_drop);
-  // ea.subscribe(event_key.RENDER_TEAMS, 'doc_ready', PageView.show_team_list);
+  ko.applyBindings(PageView);
 
-  $('#teams_container').droppable({
+  $('.team').draggable({ zIndex: 2700, opacity: 0.50, revert: 'invalid' });
+  $('.team').droppable({
+    hoverClass: "dragged_over",
+    over: function() { droppable_team = $('.dragged_over').html(); },
     drop: function(m, d) { 
-      // ea.publish(event_key.TEAM_DROP, d.draggable.html()); 
-    }
+            PageView.handle_team_drop($.trim(d.draggable.html())); 
+          }
   });
 
-  ko.applyBindings(PageView);
 });
 
