@@ -45,7 +45,6 @@ var TeamList = Backbone.Model.extend({
 
     if (draggable_index !== null || droppable_index !== null) {
       this.reorder_teams(draggable_index, droppable_index);
-      this.change();
     }
 
   }
