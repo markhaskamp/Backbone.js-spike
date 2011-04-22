@@ -1,12 +1,4 @@
 var TeamList = Backbone.Model.extend({
-  initialize: function() {
-    this.set({'team_list': ["Chicago",
-                            "Cincinnati",
-                            "Houston",
-                            "Milwaukee",
-                            "Pittsburgh",
-                            "St. Louis"]});
-  },
 
   get_index_for_team: function(team_html) {
     team_html = $.trim(team_html);
@@ -39,13 +31,12 @@ var TeamList = Backbone.Model.extend({
     this.set({"team_list": new_list});
   },
 
-  handle_team_drop: function(draggable_team_html, droppable_teM) {
+  handle_team_drop: function(draggable_team_html, droppable_team) {
     draggable_index = this.get_index_for_team(draggable_team_html);
     droppable_index = this.get_index_for_team(droppable_team);
 
     if (draggable_index !== null || droppable_index !== null) {
       this.reorder_teams(draggable_index, droppable_index);
-      this.change();
     }
 
   }

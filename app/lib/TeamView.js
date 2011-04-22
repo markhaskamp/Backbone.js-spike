@@ -4,18 +4,17 @@ var TeamView = Backbone.View.extend({
     initialize: function() {
       _.bindAll(this, 'render');
       this.model.bind('change', this.render);
-      this.model.view = this;
     },
-
-  render: function() {
-    this.paint_html();
-    this.setup_drag_and_drop();
-  },
 
   get_droppable_team: function() {
     return ($('.dragged_over').html());
   },
   
+  render: function() {
+    this.paint_html();
+    this.setup_drag_and_drop();
+  },
+
   paint_html: function() {
     var html_str = "";
 
