@@ -1,4 +1,5 @@
-var PageView = Backbone.View.extend({
+
+var TeamView = Backbone.View.extend({
 
     initialize: function() {
       _.bindAll(this, 'render');

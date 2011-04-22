@@ -39,7 +39,7 @@ var TeamList = Backbone.Model.extend({
     this.set({"team_list": new_list});
   },
 
-  handle_team_drop: function(draggable_team_html, droppable_teM) {
+  handle_team_drop: function(draggable_team_html, droppable_team) {
     draggable_index = this.get_index_for_team(draggable_team_html);
     droppable_index = this.get_index_for_team(droppable_team);
 
