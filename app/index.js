@@ -13,6 +13,6 @@ $(document).ready( function() {
     drop: function(m, d) { ea.publish(event_key.TEAM_DROP, d.draggable.html()); }
   });
 
-  ea.publish('page_load');
+  ea.publish(event_key.PAGE_LOAD);
 });
 

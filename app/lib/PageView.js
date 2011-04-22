@@ -16,14 +16,10 @@ var PageView = {
     $('.team').droppable({ hoverClass: 'dragged_over' });
   },
 
-  handle_team_drop: function(draggable_team_html) {
+  handle_team_drop: function(draggable_team) {
     droppable_team = PageView.get_droppable_team();
-    draggable_index = TeamList.get_index_for_team(draggable_team_html);
-    droppable_index = TeamList.get_index_for_team(droppable_team);
 
-    if (draggable_index !== null || droppable_index !== null) {
-      TeamList.reorder_teams(draggable_index, droppable_index);
-    }
+    TeamList.reorder_teams(draggable_team, droppable_team);
 
     ea.publish(event_key.RENDER_TEAMS);
   },
