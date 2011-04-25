@@ -222,4 +222,89 @@ rocco: index.js -> ../doc/index.html
 #	[36m../doc/[m
 no changes added to commit (use "git add" and/or "git commit -a")
 [512] app $ lsc
-[H[2J
+[H[2Jtotal 56
+drwxr-xr-x 3 mark mark  4096 2011-04-24 20:45 [0m[01;34m.[0m
+drwxr-xr-x 6 mark mark  4096 2011-04-24 19:28 [01;34m..[0m
+-rw-r--r-- 1 mark mark   210 2011-04-24 20:08 foo.rb
+-rw-r--r-- 1 mark mark   716 2011-04-24 19:03 index.haml
+-rw-r--r-- 1 mark mark   754 2011-04-24 20:02 index.html
+-rw-r--r-- 1 mark mark   915 2011-04-24 20:45 index.js
+-rw-r--r-- 1 mark mark 12288 2011-04-24 20:45 .index.js.swp
+drwxr-xr-x 2 mark mark  4096 2011-04-24 19:03 [01;34mlib[0m
+-rw-r--r-- 1 mark mark   337 2011-04-21 20:37 main.css
+-rw-r--r-- 1 mark mark 12288 2011-04-24 20:35 typescript
+[m[513] app $ rm foo.rb 
+[514] app $ cd ..
+cgs
+[515] backbone_spike $ cgs
+[H[2J# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	[32mmodified:   app/index.js[m
+#	[32mdeleted:    test/jasmine/src/TeamList.js[m
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	[36mapp/typescript[m
+#	[36mdoc/[m
+no changes added to commit (use "git add" and/or "git commit -a")
+[516] backbone_spike $ git add .
+[517] backbone_spike $ cgs
+[H[2J# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	[33mmodified:   app/index.js[m
+#	[33mnew file:   app/typescript[m
+#	[33mnew file:   doc/foo.html[m
+#
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	[32mdeleted:    test/jasmine/src/TeamList.js[m
+#
+[518] backbone_spike $ git rm test/jasmine/src/TeamList.js
+rm 'test/jasmine/src/TeamList.js'
+[519] backbone_spike $ cgs
+[H[2J# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	[33mmodified:   app/index.js[m
+#	[33mnew file:   app/typescript[m
+#	[33mnew file:   doc/foo.html[m
+#	[33mdeleted:    test/jasmine/src/TeamList.js[m
+#
+[520] backbone_spike $ git commit -m"added roco[Kco documentation to index.js"
+[master 6c641ad] added rocco documentation to index.js
+ 4 files changed, 300 insertions(+), 42 deletions(-)
+ create mode 100644 app/typescript
+ create mode 100644 doc/foo.html
+ delete mode 100644 test/jasmine/src/TeamList.js
+[521] backbone_spike $ cgs
+[H[2J# On branch master
+# Your branch is ahead of 'origin/master' by 2 commits.
+#
+nothing to commit (working directory clean)
+[522] backbone_spike $ git add .[K[K[K[K[K[K[K[K[Kgit push -u origin master 
+Counting objects: 20, done.
+Compressing objects:   9% (1/11)   Compressing objects:  18% (2/11)   Compressing objects:  27% (3/11)   Compressing objects:  36% (4/11)   Compressing objects:  45% (5/11)   Compressing objects:  54% (6/11)   Compressing objects:  63% (7/11)   Compressing objects:  72% (8/11)   Compressing objects:  81% (9/11)   Compressing objects:  90% (10/11)   Compressing objects: 100% (11/11)   Compressing objects: 100% (11/11), done.
+Writing objects:   7% (1/13)   Writing objects:  15% (2/13)   Writing objects:  23% (3/13)   Writing objects:  30% (4/13)   Writing objects:  38% (5/13)   Writing objects:  46% (6/13)   Writing objects:  53% (7/13)   Writing objects:  61% (8/13)   Writing objects:  69% (9/13)   Writing objects:  76% (10/13)   Writing objects:  84% (11/13)   Writing objects:  92% (12/13)   Writing objects: 100% (13/13)   Writing objects: 100% (13/13), 3.83 KiB, done.
+Total 13 (delta 6), reused 0 (delta 0)
+To git@github.com:markhaskamp/Backbone.js-spike.git
+   da4e89f..6c641ad  master -> master
+Branch master set up to track remote branch master from origin by rebasing.
+[523] backbone_spike $ cgs
+[H[2J# On branch master
+nothing to commit (working directory clean)
+[524] backbo

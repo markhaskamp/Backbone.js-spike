@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>index.js</title>
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>index.js</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-pub/sub_example_using_my_hand_rolled_EventAggregator'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-pub/sub_example_using_my_hand_rolled_EventAggregator">&#182;</a>
+        </div>
+        <h3>pub/sub example using my hand rolled EventAggregator</h3>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="kd">var</span> <span class="nx">ea</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventAggregator</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">event_key</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">PAGE_LOAD</span><span class="o">:</span> <span class="s2">&quot;page_load&quot;</span><span class="p">,</span> <span class="nx">TEAM_DROP</span><span class="o">:</span> <span class="s2">&quot;team_drop&quot;</span><span class="p">,</span>  <span class="nx">RENDER_TEAMS</span><span class="o">:</span> <span class="s2">&quot;render_teams&quot;</span> <span class="p">};</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.team&#39;</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s1">&#39;mouseover&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;cursor&#39;</span><span class="p">,</span> <span class="s1">&#39;move&#39;</span><span class="p">);</span> <span class="p">});</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.team&#39;</span><span class="p">).</span><span class="nx">live</span><span class="p">(</span><span class="s1">&#39;mouseout&#39;</span><span class="p">,</span>  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;cursor&#39;</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span><span class="p">);</span> <span class="p">});</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>set up the EventAggregator subscriptions</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="nx">ea</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event_key</span><span class="p">.</span><span class="nx">PAGE_LOAD</span><span class="p">,</span> <span class="s1">&#39;doc_ready&#39;</span><span class="p">,</span> <span class="nx">PageView</span><span class="p">.</span><span class="nx">show_team_list</span><span class="p">);</span>
+  <span class="nx">ea</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event_key</span><span class="p">.</span><span class="nx">TEAM_DROP</span><span class="p">,</span> <span class="s1">&#39;doc_ready&#39;</span><span class="p">,</span> <span class="nx">PageView</span><span class="p">.</span><span class="nx">handle_team_drop</span><span class="p">);</span>
+  <span class="nx">ea</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="nx">event_key</span><span class="p">.</span><span class="nx">RENDER_TEAMS</span><span class="p">,</span> <span class="s1">&#39;doc_ready&#39;</span><span class="p">,</span> <span class="nx">PageView</span><span class="p">.</span><span class="nx">show_team_list</span><span class="p">);</span>
+
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#teams_container&#39;</span><span class="p">).</span><span class="nx">droppable</span><span class="p">({</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>on the jquery drop event, fire the TEAM_DROP event</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nx">drop</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="nx">ea</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">event_key</span><span class="p">.</span><span class="nx">TEAM_DROP</span><span class="p">,</span> <span class="nx">d</span><span class="p">.</span><span class="nx">draggable</span><span class="p">.</span><span class="nx">html</span><span class="p">());</span> <span class="p">}</span>
+  <span class="p">});</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
+        </div>
+        <p>fire the PAGE_LOAD event</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="nx">ea</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="nx">event_key</span><span class="p">.</span><span class="nx">PAGE_LOAD</span><span class="p">);</span>
+<span class="p">});</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
