@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>PageView.js</title>
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>PageView.js</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="kd">var</span> <span class="nx">PageView</span> <span class="o">=</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>knockout observableArray<br/>
+<em>index.haml</em> makes the binding with a <code>data-bind</code> attribute</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>  <span class="nx">team_list</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">([</span>
+    <span class="p">{</span> <span class="nx">team_name</span><span class="o">:</span>  <span class="s2">&quot;Chicago&quot;</span><span class="p">,</span>    <span class="nx">order</span><span class="o">:</span> <span class="mi">0</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">team_name</span><span class="o">:</span>  <span class="s2">&quot;Cincinnati&quot;</span><span class="p">,</span> <span class="nx">order</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">team_name</span><span class="o">:</span>  <span class="s2">&quot;Houston&quot;</span><span class="p">,</span>    <span class="nx">order</span><span class="o">:</span> <span class="mi">2</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">team_name</span><span class="o">:</span>  <span class="s2">&quot;Pittsburgh&quot;</span><span class="p">,</span> <span class="nx">order</span><span class="o">:</span> <span class="mi">3</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">team_name</span><span class="o">:</span>  <span class="s2">&quot;Milwaukee&quot;</span><span class="p">,</span>  <span class="nx">order</span><span class="o">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="nx">team_name</span><span class="o">:</span>  <span class="s2">&quot;St. Louis&quot;</span><span class="p">,</span>  <span class="nx">order</span><span class="o">:</span> <span class="mi">5</span> <span class="p">}</span>
+    <span class="p">]),</span>
+
+    <span class="nx">handle_team_drop</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">draggable_team_html</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">droppable_team</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get_droppable_team</span><span class="p">();</span>
+      <span class="nx">draggable_index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get_index_for_team</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">draggable_team_html</span><span class="p">));</span>
+      <span class="nx">droppable_index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get_index_for_team</span><span class="p">(</span><span class="nx">droppable_team</span><span class="p">);</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">draggable_index</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">droppable_index</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">reorder_teams</span><span class="p">(</span><span class="nx">draggable_index</span><span class="p">,</span> <span class="nx">droppable_index</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.team&#39;</span><span class="p">).</span><span class="nx">draggable</span><span class="p">({</span> <span class="nx">zIndex</span><span class="o">:</span> <span class="mi">2700</span><span class="p">,</span> <span class="nx">opacity</span><span class="o">:</span> <span class="mf">0.50</span><span class="p">,</span> <span class="nx">revert</span><span class="o">:</span> <span class="s1">&#39;invalid&#39;</span> <span class="p">});</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.team&#39;</span><span class="p">).</span><span class="nx">droppable</span><span class="p">({</span>
+          <span class="nx">hoverClass</span><span class="o">:</span> <span class="s2">&quot;dragged_over&quot;</span><span class="p">,</span>
+          <span class="nx">over</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="nx">droppable_team</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dragged_over&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">();</span> <span class="p">},</span>
+          <span class="nx">drop</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="nx">PageView</span><span class="p">.</span><span class="nx">handle_team_drop</span><span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">draggable</span><span class="p">.</span><span class="nx">html</span><span class="p">()));</span> 
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+
+    <span class="nx">get_droppable_team</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">droppable_team</span><span class="p">));</span>
+    <span class="p">},</span>
+
+    <span class="nx">get_index_for_team</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">team_html</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">team_html</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">team_html</span><span class="p">);</span>
+
+      <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="nx">team_list</span><span class="p">().</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">team_list</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nx">team_name</span> <span class="o">===</span> <span class="nx">team_html</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">},</span>
+
+    <span class="nx">reorder_teams</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">over_ndx</span><span class="p">,</span> <span class="nx">under_ndx</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="nx">under_ndx</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">over_ndx</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">team_list</span><span class="p">()[</span><span class="nx">i</span><span class="p">].</span><span class="nx">order</span> <span class="o">=</span> <span class="nx">i</span><span class="o">+</span><span class="mi">1</span>
+      <span class="p">}</span>
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">team_list</span><span class="p">()[</span><span class="nx">over_ndx</span><span class="p">].</span><span class="nx">order</span> <span class="o">=</span> <span class="nx">under_ndx</span>
+
+
+      <span class="k">this</span><span class="p">.</span><span class="nx">team_list</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span>
+        <span class="kd">function</span><span class="p">(</span><span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">order</span> <span class="o">===</span> <span class="nx">right</span><span class="p">.</span><span class="nx">order</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="p">(</span><span class="nx">left</span><span class="p">.</span><span class="nx">order</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">.</span><span class="nx">order</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

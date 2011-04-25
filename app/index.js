@@ -1,9 +1,11 @@
+// ### event-based javascript with knockout
 var droppable_team = null;
 
 $(document).ready( function() {
   $('.team').live('mouseover', function() { $(this).css('cursor', 'move'); });
   $('.team').live('mouseout',  function() { $(this).css('cursor', 'default'); });
 
+  // slurp in knockout bindings defined in PageView.js
   ko.applyBindings(PageView);
 
   $('.team').draggable({ zIndex: 2700, opacity: 0.50, revert: 'invalid' });

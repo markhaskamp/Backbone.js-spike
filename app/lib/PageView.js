@@ -1,4 +1,6 @@
 var PageView = {
+  // knockout observableArray  
+  // _index.haml_ makes the binding with a <code>data-bind</code> attribute
   team_list: ko.observableArray([
     { team_name:  "Chicago",    order: 0 },
     { team_name:  "Cincinnati", order: 1 },
@@ -12,10 +14,6 @@ var PageView = {
       droppable_team = this.get_droppable_team();
       draggable_index = this.get_index_for_team($.trim(draggable_team_html));
       droppable_index = this.get_index_for_team(droppable_team);
-
-      // console.log('droppable_team: [' + droppable_team + 
-      //             ']. draggable_index: [' + draggable_index + 
-      //             ']. droppable_index: [' + droppable_index + ']');
 
       if (draggable_index !== null || droppable_index !== null) {
         this.reorder_teams(draggable_index, droppable_index);
