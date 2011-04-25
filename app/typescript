@@ -1,0 +1,225 @@
+Script started on Sun 24 Apr 2011 07:56:27 PM EDT
+[501] app $ lsc
+[H[2Jtotal 44
+drwxr-xr-x 3 mark mark  4096 2011-04-24 19:56 [0m[01;34m.[0m
+drwxr-xr-x 6 mark mark  4096 2011-04-24 19:28 [01;34m..[0m
+-rw-r--r-- 1 mark mark   103 2011-04-24 19:47 foo.rb
+-rw------- 1 mark mark 12288 2011-04-24 19:47 .foo.rb.swp
+-rw-r--r-- 1 mark mark   716 2011-04-24 19:03 index.haml
+-rw-r--r-- 1 mark mark   754 2011-04-24 19:29 index.html
+-rw-r--r-- 1 mark mark   779 2011-04-24 19:42 index.js
+drwxr-xr-x 2 mark mark  4096 2011-04-24 19:03 [01;34mlib[0m
+-rw-r--r-- 1 mark mark   337 2011-04-21 20:37 main.css
+-rw-r--r-- 1 mark mark     0 2011-04-24 19:56 typescript
+[m[502] app $ lscexitclear; bundle exec guard[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kroci[Kco foo.rb [K[K[K[K[K[K[K[K[K[K[K[K[Kh
+  483  cd dev/backbone_spike/
+  484  lsc
+  485  cat Gemfile
+  486  vi Gemfile
+  487  vim Gemfile
+  488  lsc
+  489  cgs
+  490  git add .
+  491  cgs
+  492  git commit -m"guard"
+  493  git push -u origin backbone
+  494  exit
+  495  cd dev/backbone_spike/
+  496  rvm list
+  497  bundle update
+  498  bundle exec guard
+  499  clear; bundle exec guard
+  500  exit
+  501  lsc
+  502  h
+[503] app $ [10@(reverse-i-search)`':[Cr': clear; bundle exec guard[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co': git commit -m"added model through constructor"[12P[503] app $[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+[503] app $ [10@(reverse-i-search)`':[Cr': clear; bundle exec guard[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co': git commit -m"added model through constructor"[12P[503] app $[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[503] app $ [10@(reverse-i-search)`':[Cr': clear; bundle exec guard[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@c[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@l[C[C[C[1@e[C[C[C[1@a[C[C[C[1@r[C[C[C[C[C[C[C[C[C[Crake[K[C[C[C[C[C[C[1Prake[C[C[C[C[C[C rake[C[C[C[C[C[K[C[C[C[C[C; rake[C[C[C[C[C[K[C[C[C[C[C; rake[C[C[C[C[C[K[C[C[C[C[C; rake[C[C[C[C[C[C[C[C[C[C[C haml[15P[503] app $[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[H[2J(in /home/mark/dev/backbone_spike)
+[504] app $ lsc
+[H[2Jtotal 44
+drwxr-xr-x 3 mark mark  4096 2011-04-24 20:02 [0m[01;34m.[0m
+drwxr-xr-x 6 mark mark  4096 2011-04-24 19:28 [01;34m..[0m
+-rw-r--r-- 1 mark mark   103 2011-04-24 19:47 foo.rb
+-rw------- 1 mark mark 12288 2011-04-24 19:47 .foo.rb.swp
+-rw-r--r-- 1 mark mark   716 2011-04-24 19:03 index.haml
+-rw-r--r-- 1 mark mark   754 2011-04-24 20:02 index.html
+-rw-r--r-- 1 mark mark   779 2011-04-24 19:42 index.js
+drwxr-xr-x 2 mark mark  4096 2011-04-24 19:03 [01;34mlib[0m
+-rw-r--r-- 1 mark mark   337 2011-04-21 20:37 main.css
+-rw-r--r-- 1 mark mark     0 2011-04-24 19:56 typescript
+[m[505] app $ bu[K[K[10@(reverse-i-search)`':[Cb': clear; bundle exec guard[1@u[C[C[C[C[C[C[C[C[C[C[1@n[C[C[C[C[C[C[C[C[C[C[1@d[C[C[C[C[C[C[C[C[C[C[14P[505] app $[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[505] app $ rocco --help
+Usage: rocco [-l <lang>] [-c <chars>] [-o <dir>] <file>...
+Generate literate-programming-style documentation for Ruby source <file>s.
+
+Options:
+  -l, --language=<lang>  The Pygments lexer to use to highlight code
+  -c, --comment-chars=<chars>
+                         The string to recognize as a comment marker
+  -o, --output=<dir>     Directory where generated HTML files are written
+  -t, --template=<path>  The file to use as template when rendering HTML
+      --help             Show this help message
+[506] app $ bundle[Ke exec gu[K[Krocco -o ../doc foo.rb
+pygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+[507] app $ bundle exec rocco -o ../doc foo.rb[C[C[C[C[C[C[C[C[C[C[C[C[1@c[1@l[1@e[1@a[1@r[1@;[1@ 
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+/home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco/layout.rb:30:in `block in sections': undefined method `empty?' for nil:NilClass (NoMethodError)
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco/layout.rb:20:in `map'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco/layout.rb:20:in `sections'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:135:in `[]'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:135:in `find'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:99:in `block in fetch'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:95:in `each'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:95:in `fetch'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:77:in `[]'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/template.rb:125:in `render'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/template.rb:43:in `render'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache.rb:119:in `render'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco.rb:153:in `to_html'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:97:in `block (2 levels) in <top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:97:in `open'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:97:in `block in <top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:91:in `each'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:91:in `<top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/bin/rocco:19:in `load'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/bin/rocco:19:in `<main>'
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+/home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco/layout.rb:30:in `block in sections': undefined method `empty?' for nil:NilClass (NoMethodError)
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco/layout.rb:20:in `map'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco/layout.rb:20:in `sections'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:135:in `[]'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:135:in `find'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:99:in `block in fetch'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:95:in `each'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:95:in `fetch'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/context.rb:77:in `[]'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/template.rb:125:in `render'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache/template.rb:43:in `render'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/mustache-0.99.3/lib/mustache.rb:119:in `render'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco.rb:153:in `to_html'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:97:in `block (2 levels) in <top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:97:in `open'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:97:in `block in <top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:91:in `each'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:91:in `<top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/bin/rocco:19:in `load'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/bin/rocco:19:in `<main>'
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: foo.rb -> ../doc/foo.html
+[508] app $ clear; bundle exec rocco -o ../doc foo.rb[K[K[K[K[K[Kindex.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[509] app $ clear; bundle exec rocco -o ../doc index.js[K[K[K[K[K[K[K[K--help
+[H[2JUsage: rocco [-l <lang>] [-c <chars>] [-o <dir>] <file>...
+Generate literate-programming-style documentation for Ruby source <file>s.
+
+Options:
+  -l, --language=<lang>  The Pygments lexer to use to highlight code
+  -c, --comment-chars=<chars>
+                         The string to recognize as a comment marker
+  -o, --output=<dir>     Directory where generated HTML files are written
+  -t, --template=<path>  The file to use as template when rendering HTML
+      --help             Show this help message
+[510] app $ clear; bundle exec rocco -o ../doc --help[K[K[K[K[Kljs[Kj[Ks index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+/home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill': Timeout::Error (Timeout::Error)
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:2211:in `read_status_line'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:2200:in `read_new'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:1183:in `transport_request'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:1169:in `request'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:419:in `block in post_form'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:627:in `start'
+	from /home/mark/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/net/http.rb:418:in `post_form'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco.rb:459:in `highlight_webservice'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco.rb:421:in `highlight'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/lib/rocco.rb:131:in `initialize'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:92:in `new'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:92:in `block in <top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:91:in `each'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/gems/rocco-0.6/bin/rocco:91:in `<top (required)>'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/bin/rocco:19:in `load'
+	from /home/mark/.rvm/gems/ruby-1.9.2-p136@backbone_spike/bin/rocco:19:in `<main>'
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ 
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ x``xclear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ clear; bundle exec rocco -o ../doc -ljs index.js
+[H[2Jpygmentize not in PATH; using pygments.appspot.com instead
+WARNING: Pygments not found. Using webservice.
+rocco: index.js -> ../doc/index.html
+[511] app $ csl[K[Kgs
+[H[2J# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#
+# Changed but not updated:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	[32mmodified:   index.js[m
+#	[32mdeleted:    ../test/jasmine/src/TeamList.js[m
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	[36mfoo.rb[m
+#	[36mtypescript[m
+#	[36m../doc/[m
+no changes added to commit (use "git add" and/or "git commit -a")
+[512] app $ lsc
+[H[2J
