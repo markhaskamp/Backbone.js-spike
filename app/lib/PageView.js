@@ -21,11 +21,12 @@ var PageView = {
 
     TeamList.reorder_teams(draggable_team, droppable_team);
 
+    // fire the RENDER_TEAMS event
     ea.publish(event_key.RENDER_TEAMS);
   },
 
   get_droppable_team: function() {
     return ($('.dragged_over').html());
   },
-
 }
+
