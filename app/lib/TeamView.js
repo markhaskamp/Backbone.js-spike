@@ -1,8 +1,10 @@
-
+// define TeamView as a Backbone View
 var TeamView = Backbone.View.extend({
 
     initialize: function() {
+      // underscore's <code>.bindAll</code>. <code>this</code> means this object when used in <code>render</code> method.
       _.bindAll(this, 'render');
+      // bind the model's _change_ event to <code>this.render</code>
       this.model.bind('change', this.render);
     },
 
@@ -18,6 +20,7 @@ var TeamView = Backbone.View.extend({
   paint_html: function() {
     var html_str = "";
 
+    // underscore's _each_. knockout's _get_.
     _.each(this.model.get('team_list'), function(team) {
       html_str += '\n<div class="team">' + team + '</div>';
     });

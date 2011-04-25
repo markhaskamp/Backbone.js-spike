@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>TeamView.js</title>
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>TeamView.js</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        <p>define TeamView as a Backbone View</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="kd">var</span> <span class="nx">TeamView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+
+    <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>underscore&rsquo;s <code>.bindAll</code>. <code>this</code> means this object when used in <code>render</code> method.</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="nx">_</span><span class="p">.</span><span class="nx">bindAll</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s1">&#39;render&#39;</span><span class="p">);</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-3'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-3">&#182;</a>
+        </div>
+        <p>bind the model&rsquo;s <em>change</em> event to <code>this.render</code></p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>      <span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">render</span><span class="p">);</span>
+    <span class="p">},</span>
+
+  <span class="nx">get_droppable_team</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.dragged_over&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">());</span>
+  <span class="p">},</span>
+  
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">paint_html</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setup_drag_and_drop</span><span class="p">();</span>
+  <span class="p">},</span>
+
+  <span class="nx">paint_html</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">html_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-4'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-4">&#182;</a>
+        </div>
+        <p>underscore&rsquo;s <em>each</em>. knockout&rsquo;s <em>get</em>.</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">team</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">html_str</span> <span class="o">+=</span> <span class="s1">&#39;\n&lt;div class=&quot;team&quot;&gt;&#39;</span> <span class="o">+</span> <span class="nx">team</span> <span class="o">+</span> <span class="s1">&#39;&lt;/div&gt;&#39;</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div#teams_container&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">html_str</span><span class="p">);</span>
+  <span class="p">},</span>
+
+  <span class="nx">setup_drag_and_drop</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.team&#39;</span><span class="p">).</span><span class="nx">draggable</span><span class="p">({</span>
+      <span class="nx">revert</span><span class="o">:</span> <span class="s1">&#39;invalid&#39;</span><span class="p">,</span>
+      <span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;0.50&#39;</span><span class="p">,</span>
+      <span class="nx">zIndex</span><span class="o">:</span> <span class="mi">2700</span>
+    <span class="p">});</span>
+
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.team&#39;</span><span class="p">).</span><span class="nx">droppable</span><span class="p">({</span> <span class="nx">hoverClass</span><span class="o">:</span> <span class="s1">&#39;dragged_over&#39;</span> <span class="p">});</span>
+  <span class="p">}</span>
+
+<span class="p">});</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

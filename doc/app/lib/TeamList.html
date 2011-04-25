@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>TeamList.js</title>
+  <link rel="stylesheet" href="http://github.com/jashkenas/docco/raw/0.3.0/resources/docco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <table cellspacing=0 cellpadding=0>
+  <thead>
+    <tr>
+      <th class=docs><h1>TeamList.js</h1></th>
+      <th class=code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id='section-1'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-1">&#182;</a>
+        </div>
+        <p>define TeamList as a Backbone Model</p>
+      </td>
+      <td class=code>
+        <div class='highlight'><pre><span class="kd">var</span> <span class="nx">TeamList</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+
+  <span class="nx">get_index_for_team</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">team_html</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">team_html</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">team_html</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">)[</span><span class="nx">i</span><span class="p">])</span> <span class="o">===</span> <span class="nx">team_html</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+  <span class="p">},</span>
+
+  <span class="nx">reorder_teams</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">over_ndx</span><span class="p">,</span> <span class="nx">under_ndx</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">new_list</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">under_ndx</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">new_list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">)[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="nx">new_list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">)[</span><span class="nx">over_ndx</span><span class="p">]);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="nx">under_ndx</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;=</span><span class="nx">over_ndx</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">new_list</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">)[</span><span class="nx">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="nx">over_ndx</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">new_list</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;team_list&#39;</span><span class="p">)[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span></pre></div>
+      </td>
+    </tr>
+    <tr id='section-2'>
+      <td class=docs>
+        <div class="pilwrap">
+          <a class="pilcrow" href="#section-2">&#182;</a>
+        </div>
+        <p>after using the Model <code>.set</code>, a <em>change</em> event is automatically fired.</p>
+
+      </td>
+      <td class=code>
+        <div class='highlight'><pre>    <span class="k">this</span><span class="p">.</span><span class="nx">set</span><span class="p">({</span><span class="s2">&quot;team_list&quot;</span><span class="o">:</span> <span class="nx">new_list</span><span class="p">});</span>
+  <span class="p">},</span>
+
+  <span class="nx">handle_team_drop</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">draggable_team_html</span><span class="p">,</span> <span class="nx">droppable_team</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">draggable_index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get_index_for_team</span><span class="p">(</span><span class="nx">draggable_team_html</span><span class="p">);</span>
+    <span class="nx">droppable_index</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">get_index_for_team</span><span class="p">(</span><span class="nx">droppable_team</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">draggable_index</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">||</span> <span class="nx">droppable_index</span> <span class="o">!==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">reorder_teams</span><span class="p">(</span><span class="nx">draggable_index</span><span class="p">,</span> <span class="nx">droppable_index</span><span class="p">);</span>
+    <span class="p">}</span>
+
+  <span class="p">}</span>
+<span class="p">});</span></pre></div>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>

@@ -1,3 +1,4 @@
+// define TeamList as a Backbone Model
 var TeamList = Backbone.Model.extend({
 
   get_index_for_team: function(team_html) {
@@ -28,6 +29,7 @@ var TeamList = Backbone.Model.extend({
       new_list.push(this.get('team_list')[i]);
     }
 
+    // after using the Model <code>.set</code>, a _change_ event is automatically fired.
     this.set({"team_list": new_list});
   },
 
